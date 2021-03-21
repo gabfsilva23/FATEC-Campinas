@@ -1,0 +1,9 @@
+Materia do segundo semestre do curso 
+Analise e Desenvolvimento de Sistemas
+da FATEC Campinas.
+07/2020 - 12/2020
+
+Teoria sobre arquitetura, diferença e uso de diferentes
+sistemas operacionais.
+
+Práticas relacionadas a batch, script shell, assembly...
