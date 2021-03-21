@@ -1,0 +1,7 @@
+Materia do segundo semestre do curso 
+Analise e Desenvolvimento de Sistemas
+da FATEC Campinas.
+07/2020 - 12/2020
+
+Aulas em linguagem C 
+ministradas pelo professor Alexandre
