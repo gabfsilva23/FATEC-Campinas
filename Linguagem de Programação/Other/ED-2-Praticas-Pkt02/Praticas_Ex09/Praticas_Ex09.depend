@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1362974796 source:e:\pto\dropbox\academico\aulas\ed\praticas\ed-lab4\ed_alocdin2\main.c
+	"Pessoa.h"
+
+1362974824 e:\pto\dropbox\academico\aulas\ed\praticas\ed-lab4\ed_alocdin2\pessoa.h
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<string.h>
+
+1362974871 source:e:\pto\dropbox\academico\aulas\ed\praticas\ed-lab4\ed_alocdin2\pessoa.c
+	"Pessoa.h"
+

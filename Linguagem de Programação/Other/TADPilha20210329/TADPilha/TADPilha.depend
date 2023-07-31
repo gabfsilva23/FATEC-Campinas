@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1617031223 source:d:\ed\tadpilha\linkedstack.c
+	"LinkedStack.h"
+
+1617029364 d:\ed\tadpilha\linkedstack.h
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+
+1617026152 source:d:\ed\tadpilha\main.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedStack.h"
+

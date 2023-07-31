@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1616417900 source:d:\ed\filacircular\filacircular.c
+	"FilaCircular.h"
+
+1616417910 d:\ed\filacircular\filacircular.h
+	<stdio.h>
+	<stdlib.h>
+
+1616418229 source:d:\ed\filacircular\main.c
+	<stdio.h>
+	<stdlib.h>
+	"FilaCircular.h"
+

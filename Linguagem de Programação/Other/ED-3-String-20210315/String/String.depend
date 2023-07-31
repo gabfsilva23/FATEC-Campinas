@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1615807578 source:d:\ed\string\main.c
+	<stdio.h>
+	<stdlib.h>
+	"StringC.h"
+
+1615807658 source:d:\ed\string\stringc.c
+	"StringC.h"
+
+1615807310 d:\ed\string\stringc.h
+	<stdlib.h>
+	<stdio.h>
+
