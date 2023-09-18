@@ -1,0 +1,166 @@
+1) Resposta a questão 1 está nos arquivos .java: Computador, Notebook, Portatil e P1_Ex01  
+
+2) Herança Múltipla: Você já precisou disso em Python?
+
+Bom dia, Grupo Python Brasil, 
+Obrigada pelo contato!
+
+Com relação a pergunta que originou essa troca de e-mails: “Herança Múltipla:  você já precisou disso em Python?”, entendo que em contraste ao Java que nos oferece interface, Python nos oferece heranças múltiplas, enquanto Java suporta herança múltipla apenas através de interfaces. Uma classe pode implementar qualquer número de interfaces, mas pode estender apenas uma classe. A herança múltipla não é suportada porque leva a um problema mortal de diamante. No entanto, ele pode ser resolvido, mas leva a um sistema complexo, de modo que a herança múltipla foi descartada pelos fundadores de Java. 
+Já em Python, ela não só é possível como muito implementada, em Python Herança múltipla ocorre sempre que uma subclasse possui duas ou mais superclasses, ou seja, é filha de mais de uma classe. Isso permite a combinação de várias superclasses, o que serve como um ponto de partida para a definição de novas classes. 
+A Vantagem da herança múltipla é a maior capacidade de especificações de classes e a maior oportunidade de reutilização de código, o que de certa forma é um dos objetivos da Programação Orientada a Objetos. Obs.: É importante lembrar que em Python a ordem da herança é da esquerda para a direita. 
+Um exemplo desta prática são códigos referentes a relógio. No exemplo abaixo, a classe CalendarClock implementa um relógio com calendário. É um caso de herança múltipla, pois herda tanto do relógio quanto do calendário. Assim, o relógio está contido em dia, dia por sua vez está contido na semana, e a semana por sua vez é contida numa superclasse calendário, que respectivamente também pode conter ano e outras características. Uma "simples" hora, é a herança combinada de todos estes elementos.
+
+
+class CalendarClock(Clock, Calendar):
+
+
+    def _init_(self, day, month, year, hour, minute, second):
+        Clock._init_(self,hour, minute, second)
+        Calendar._init_(self, day, month, year)
+
+
+
+
+    def tick(self):
+        previous_hour = self._hours
+        Clock.tick(self)
+        if (self._hours < previous_hour): 
+            self.advance()
+
+
+    def _str_(self):
+        return Calendar._str(self) + ", " + Clock.str_(self)
+
+
+
+
+if _name_ == "_main_":
+    x = CalendarClock(31, 12, 2013, 23, 59, 59)
+    print("One tick from ",x, end=" ")
+    x.tick()
+
+3) 
+a) Métodos abstratos são opcionais mas sua implementação implica numa utilidade: é uma maneira do designer dizer que toda filha PRECISA implementar esse método.
+
+
+b) Falso.
+	class A 
+	{ 
+	 public void testA() 
+	{ 
+	 System.out.println(“Teste A”); 
+	 } 
+	} 
+	 class Teste 
+	{ 
+	 A a=new A(); 
+	 A.testA(); 
+	} 
+
+é possível através de métodos gets() e sets(). A vantagem destes métodos é que pode-se declarar múltiplos objetos na mesma classe, e acessá-los sem novas instâncias para cada. 
+
+	class Criança 
+	{ 
+	 public void testeMoleque() 
+	{ 
+	System.out.println(“Sou filho de A”); 
+	 } 
+	} 
+
+	class Pai 
+	{ 
+	private Crianca filho; 
+
+	public void setCrianca(Crianca c) { 
+	this.filho=c; 
+	} 
+
+	public Crianca getCrianca() { 
+	 return filho; 
+	 } 
+	} 
+ 
+	public Teste 
+	{ 
+	 public static void main(String[] args) 
+	{ 
+	Crianca cri=new Crianca(); 
+	Pai p=new Pai(); 
+	p.setCrianca(cri); 
+	 
+	p.getCrianca(); 
+	
+	p.getCrianca().testMoleque(); 
+	 }	 
+	}
+
+c)A afirmação está correta.
+Código exemplo:
+
+public class MinhaSubClasse extends MinhaClasseAbstrata {
+
+    public void abstractMethod() {
+        System.out.println("minha implementação de código");
+    }
+}
+
+d) Independente para o que a interface faça menção, o objeto implementando a interface é necessariamente a subclasse de um objeto.
+Secção  9.2 do JLS define esse comportamento: http://docs.oracle.com/javase/specs/jls/se7/html/jls-9.html#jls-9.2
+
+
+4)
+a)Errado, Python permite mudanças de tipo nos atributos de classes depois que objetos são instanciados. Sendo:
+
+ a = "F"
+ print(a)
+ print(type(a))
+
+ a = 2
+ print(a)
+ print(type(a))
+
+O retorno seria que ambos F e 2 apareceriam, sendo F 'str' e 2 'int’
+
+b)Métodos são acessados de maneira "pública" por padrão no Python. Mas os mesmo podem ser protegidos pelo prefixo _ (único 'underline'). Isto previne de ser acessado a não ser que seja pela própria subclasse.
+
+class Student:
+    _escolaNome = 'XYZ Escola' # atributo de classe protegido
+    
+    def _init_(self, nome, idade):
+        self._nome=nome  # atributo de instância protegido
+        self._i
+
+c) O estado do objeto é o valor do atributo. Por exemplo:
+
+ class Ponto:
+	def_init_(self,x,y):
+	self.x = x
+	self.y =y
+
+	p= Ponto (42,43)
+
+então o estado de 'p' é {x: 42. y:43}
+
+Para modificar o estado do objeto, o método precisa de acesso ao objeto. Para métodos comuns, é provido pelo parâmetro 'self'.
+
+Agora, as classes em Python são objetos também ( instâncias do 'type' class), através do "classmethods" que pode invocar tanto a instância quanto a classe por si próprios, mas pegando o objeto de classe por si, ao invés da instância. Esses métodos de classe podem então modificar o estado da classe (atributos, que são partilhados por todas instâncias).
+
+Um método estático não obtém nem a instância nem a classe, portanto, não pode alterar nem a classe nem o estado da instância.
+
+d) Correto. Seu uso implica na instância da classe. Com esta palavra ('self') é possível acessar os atributos do método de uma classe python.  Ele  vincula os atributos dados com um dado argumento. 
+Python não usa '@' em sua sintaxe para se referir a um atributo instanciado. Ele optou em fazer métodos de uma maneira que as suas instâncias sejam passadas automaticamente, mas não recebidas automaticamente.
+O primeiro parâmetro do método é a instância que o método é chamado.
+
+ class carro():
+	
+	def_init_(self, modelo, cor):
+	  self.modelo = modelo
+	  self.cor = cor
+
+ def show(self):
+	print("Modelo é:", self.modelo)
+	print("A cor é:", self.cor)
+
+5) Resposta a questão 05 está no arquivo p1_ex05_poo
+
+6) Arquivo Deposito.java
